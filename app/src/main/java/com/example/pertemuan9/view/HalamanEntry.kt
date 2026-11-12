@@ -25,13 +25,46 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.pertemuan9.R
 import com.example.pertemuan9.uicontroller.DestinasiNavigasi
-
+import com.example.pertemuan9.uicontroller.SiswaTopAppBar
+import com.example.pertemuan9.viewmodel.DetailSiswa
+import com.example.pertemuan9.viewmodel.EntryViewModel
+import com.example.pertemuan9.viewmodel.PenyediaViewModel
+import com.example.pertemuan9.viewmodel.UIStateSiswa
+import kotlinx.coroutines.launch
 
 object DestinasiEntry : DestinasiNavigasi {
     override val route = "item_entry"
     override val titleRes = R.string.entry_siswa
 }
 
+
+
+@Composable
+fun EntrySiswaBody(
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Column(
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_large)),
+        modifier = modifier.padding(dimensionResource(id = R.dimen.padding_medium))
+    ) {
+        FormInputSiswa(
+            detailSiswa = uiStateSiswa.detailSiswa,
+            onValueChange = onSiswaValueChange,
+            modifier = Modifier.fillMaxWidth()
+        )
+        Button(
+            onClick = onSaveClick,
+            enabled = uiStateSiswa.isEntryValid,
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(stringResource(R.string.btn_submit))
+        }
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
