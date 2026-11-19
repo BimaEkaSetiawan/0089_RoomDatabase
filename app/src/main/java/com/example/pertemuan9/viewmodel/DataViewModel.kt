@@ -15,6 +15,8 @@ class DataViewModel(
     private val repositoriSiswa: RepositoriSiswa
 ) : ViewModel(){
 
+    private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSisway.itemIdArg])
+
 
 
     companion object{
