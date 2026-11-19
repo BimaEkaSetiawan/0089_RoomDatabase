@@ -28,7 +28,7 @@ import com.example.pertemuan9.uicontroller.DestinasiNavigasi
 import com.example.pertemuan9.uicontroller.SiswaTopAppBar
 import com.example.pertemuan9.viewmodel.DetailSiswa
 import com.example.pertemuan9.viewmodel.EntryViewModel
-import com.example.pertemuan9.viewmodel.PenyediaViewModel
+import com.example.pertemuan9.viewmodel.provider.PenyediaViewModel
 import com.example.pertemuan9.viewmodel.UIStateSiswa
 import kotlinx.coroutines.launch
 
@@ -116,7 +116,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = detailSiswa.nama,
             onValueChange = { onValueChange(detailSiswa.copy(nama = it)) },
-            label = { Text(stringResource(R.string.nama)) },
+            label = { Text(stringResource(R.string.nama1)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
@@ -124,7 +124,7 @@ fun FormInputSiswa(
         OutlinedTextField(
             value = detailSiswa.alamat,
             onValueChange = { onValueChange(detailSiswa.copy(alamat = it)) },
-            label = { Text(stringResource(R.string.alamat)) },
+            label = { Text(stringResource(R.string.alamat1)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
@@ -133,7 +133,7 @@ fun FormInputSiswa(
             value = detailSiswa.telpon,
             onValueChange = { onValueChange(detailSiswa.copy(telpon = it)) },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-            label = { Text(stringResource(R.string.telpon)) },
+            label = { Text(stringResource(R.string.telpon1)) },
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true

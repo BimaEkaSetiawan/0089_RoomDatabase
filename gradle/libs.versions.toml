@@ -10,6 +10,8 @@ kotlin = "2.0.21"
 composeBom = "2026.02.01"
 room = "2.8.4"
 kspver = "2.0.21-1.0.26"
+lifecycleViewmodelSavedstate = "2.11.0"
+ui = "1.12.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +36,8 @@ room-compiler = {module = "androidx.room:room-compiler", version.ref = "room"}
 lifecycle-viewmodel-compose = {module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.10.0"}
 lifecycle-runtime-compose = {module = "androidx.lifecycle:lifecycle-runtime-compose", version = "2.10.0"}
 navigation-compose = {module = "androidx.navigation:navigation-compose", version = "2.9.6"}
+androidx-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycleViewmodelSavedstate" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
 
 
 [plugins]
