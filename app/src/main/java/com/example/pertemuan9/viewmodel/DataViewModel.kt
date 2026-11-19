@@ -17,6 +17,17 @@ class DataViewModel(
 
     private val idSiswa: Int = checkNotNull(savedStateHandle[DestinasiDetailSisway.itemIdArg])
 
+    val uiStateSiswa: StateFlow<UIStateSiswa> =
+        repositoriSiswa.getSiswaStream(idSiswa)
+            .filterNotNull()
+            .map {
+                UIStateSiswa(detailSiswa = it.toDetailSiswa())
+            }.stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
+                initialValue = DetailSiswaState()
+            )
+
 
 
     companion object{
