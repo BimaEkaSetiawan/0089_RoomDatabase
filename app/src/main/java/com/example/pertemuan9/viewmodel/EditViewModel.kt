@@ -40,4 +40,9 @@ class EditViewModel (
         }
     }
 
-
+    suspend fun updateSiswa(){
+        if (validasiInput()){
+            repositoriSiswa.updateSiswa(uiStateSiswa.detailSiswa.toSiswa())
+        }
+    }
+}
