@@ -28,7 +28,9 @@ class DataViewModel(
                 initialValue = DetailSiswaState()
             )
 
-
+    suspend fun deleteSiswa(){
+        repositoriSiswa.deleteSiswa(uiStateSiswa.detailSiswa.toSiswa())
+    }
 
     companion object{
         private const val TIMEOUT_MILLIS = 5_000L
